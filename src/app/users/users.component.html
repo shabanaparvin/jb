@@ -1,0 +1,14 @@
+<div class="container" id="users-container">
+    <div class="row">
+  
+      <section class="content">
+        <h1>Users</h1>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action" *ngFor="let user of users" routerLink="/dashboard/{{user.username}}">
+             <h3>{{user.username | uppercase}}</h3> 
+            </a>
+          </div>
+      </section>
+      
+    </div>
+  </div>

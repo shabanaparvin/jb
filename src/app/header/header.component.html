@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<div class="container">
+  <nav class="navbar navbar-default nav-menu" >
+    <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".button-menu" *ngIf="user!=undefined" (click)="isMenuExpanded=!isMenuExpanded;isExpanded=false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" routerLink="login">Lucky Finance</a>
+    </div>
+    
+    <div class="collapse navbar-collapse button-menu" *ngIf="user!=undefined" [ngbCollapse]="!isMenuExpanded">
+        <ul class="nav navbar-nav " *ngIf="user.role=='admin'">
+            <li><a routerLink="/dashboard" (click)="isMenuExpanded=false"><i class="fa fa-home"></i> HOME</a></li>
+            <li><a routerLink="/users" (click)="isMenuExpanded=false"><i class="fa fa-users"></i> USERS</a></li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" (click)="isExpanded=!isExpanded">
+                        <span class="glyphicon glyphicon-user"></span> 
+                        <strong>{{user!=null && (user.username | capitalize)}}</strong>
+                        <span class="glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul class="dropdown-menu" [ngbCollapse]="!isExpanded">
+                        <li>
+                            <div class="navbar-login">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <p class="text-center">
+                                            <span class="glyphicon glyphicon-user icon-size"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p class="text-left"><strong>{{user!=null && (user.username | capitalize)}}</strong></p>
+                                        <p class="text-left small">{{user!=null && (user.role | capitalize)}}</p>
+                                        <p class="text-left">
+                                            <a routerLink="/login" class="btn btn-primary btn-block btn-sm">Logout</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                       <!-- <li class="divider"></li>
+                        <li>
+                            <div class="navbar-login navbar-login-session">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p>
+                                            <a href="#" class="btn btn-primary btn-block">My Profile</a>
+                                            <a href="#" class="btn btn-danger btn-block">Change Password</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>-->
+                    </ul>
+                </li>
+            </ul>
+             
+    </div>
+
+  </nav>
+</div>

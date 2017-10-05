@@ -1,0 +1,57 @@
+<div class="container" id="dashboard-container">
+
+  <h1>Dashboard</h1>
+  <!--<a routerLink="/users" class="btn-lg btn-primary" id="usersBtn">Users</a>-->
+  <hr/>
+<div class="row">
+<div class="col-xs-6 col-md-3">
+    <a  class="panel-link" style="cursor:not-allowed">
+      <div class="panel status panel-danger">
+       
+          <div class="panel-heading">
+              <h2 class="panel-title text-center">{{totalDebts-totalCredits}}</h2><br/>
+          </div>
+          <div class="panel-body text-center">                        
+              <strong>Total Due Amount</strong>
+          </div>
+        
+      </ div>
+  </a>
+</div>          
+</div>
+<div class="row">
+    <div class="col-xs-6 col-md-3">
+        <a  class="panel-link"  routerLink="/debts{{member!=null?'/'+member:''}}">
+          <div class="panel status panel-success">
+           
+              <div class="panel-heading">
+                  <h2 class="panel-title text-center">{{totalDebts}}</h2><br/>
+              </div>
+              <div class="panel-body text-center">                        
+                  <strong>Total Debts</strong>
+              </div>
+            
+          </ div>
+      </a>
+    </div>          
+
+    <div class="col-xs-6 col-md-3">
+        <a  class="panel-link" routerLink="/credits{{member!=null?'/'+member:''}}">
+          <div class="panel status panel-info">
+           
+              <div class="panel-heading">
+                  <h2 class="panel-title text-center">{{totalCredits}}</h2><br/>
+              </div>
+              <div class="panel-body text-center">                        
+                  <strong>Total Credits</strong>
+              </div>
+            
+          </ div>
+      </a>
+    </div>          
+    
+
+</div>
+
+</div>
+<link src="http://bootswatch.com/flatly/bootstrap.css" type="text/css">

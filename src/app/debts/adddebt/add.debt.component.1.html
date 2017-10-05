@@ -1,0 +1,17 @@
+
+<pre>{{bsValue}}</pre>
+<input type="text"
+       [minDate]="minDate"
+       [maxDate]="maxDate"
+       #dp="bsDatepicker"
+       bsDatepicker [(bsValue)]="bsValue">
+<input type="text"
+       [minDate]="minDate"
+       [maxDate]="maxDate"
+       [(ngModel)]="bsValue"
+       bsDatepicker>
+<button class="btn btn-success" (click)="dp.toggle()">Date Picker popup</button>
+ 
+<br>
+<br>
+ 
